@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <h1>Google Map예제</h1>
     <GoogleMap />
   </div>
 </template>
 
 <script>
-import GoogleMap from './components/GoogleMap.vue';
-
+import GoogleMap from './components/GoogleMap.vue'
 export default {
-  name: 'App',
-  components: {
-    GoogleMap
-  }
+  components: { GoogleMap }
 }
 </script>
+
+<style>
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>

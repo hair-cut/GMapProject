@@ -1,13 +1,19 @@
 <template>
   <div id="app">
+    <AppMenu />
     <GoogleMap />
   </div>
 </template>
 
 <script>
+import AppMenu from './components/Menu.vue'
 import GoogleMap from './components/GoogleMap.vue'
+
 export default {
-  components: { GoogleMap }
+  components: {
+    AppMenu,
+    GoogleMap
+  }
 }
 </script>
 

@@ -13,7 +13,7 @@ const pinOptions = { background: '#FBBC04' }
 <template>
   <GoogleMap
     :api-key="googleMapApiKey"
-    style="width: 100%; height: 100vh"
+    style="width: 100%; height: 95vh"
     :center="center"
     :zoom="15"
   >

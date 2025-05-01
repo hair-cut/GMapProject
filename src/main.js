@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import VueNavigationBar from "vue-navigation-bar";
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.component('navigation-bar', VueNavigationBar)
+
+app.mount('#app')

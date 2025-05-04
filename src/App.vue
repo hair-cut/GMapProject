@@ -1,19 +1,12 @@
 <template>
   <div id="app">
-    <AppMenu />
-    <GoogleMap />
+    <router-view></router-view> <!-- 라우터 뷰를 통해 Home.vue가 로딩됨 -->
   </div>
 </template>
 
 <script>
-import AppMenu from './components/Menu.vue'
-import GoogleMap from './components/GoogleMap.vue'
-
 export default {
-  components: {
-    AppMenu,
-    GoogleMap
-  }
+  name: 'App',
 }
 </script>
 

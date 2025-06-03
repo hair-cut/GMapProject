@@ -15,7 +15,7 @@
     "core-js": "^3.8.3",
     "exif-js": "^2.3.0",
     "firebase": "^11.8.0",
-    "firebase-admin": "^13.3.0",
+    "firebase-admin": "^13.4.0",
     "firebase-functions": "^6.3.2",
     "vue": "^3.2.13",
     "vue-navigation-bar": "^6.1.0",

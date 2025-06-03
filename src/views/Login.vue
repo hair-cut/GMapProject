@@ -1,9 +1,11 @@
 <template>
   <div class="login-container">
     <h2>ログイン</h2>
-    <input type="email" v-model="email" placeholder="メールアドレス" />
-    <input type="password" v-model="password" placeholder="パスワード" />
-    <button class="login-button" @click="login">ログイン</button>
+    <form @submit.prevent="login">
+      <input type="email" v-model="email" placeholder="メールアドレス" />
+      <input type="password" v-model="password" placeholder="パスワード" />
+      <button class="login-button" type="submit">ログイン</button>
+    </form>
     <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     <p>
       アカウントをお持ちでない方はこちら：

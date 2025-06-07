@@ -3,7 +3,13 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase'
 
-const center = { lat: 37.5665, lng: 126.9780 }
+// 環境に応じてAPIのベースURLを設定
+const API_BASE_URL =
+  window.location.hostname === 'localhost'
+    ? 'http://localhost:3001'
+    : 'https://my-web-app--gmapproject-2ea97.asia-east1.hosted.app'
+
+const center = { lat: 35.681236, lng: 139.767125 }
 const mapId = process.env.VUE_APP_GOOGLE_MAP_ID
 const photos = ref([])
 const user = ref(null)
@@ -62,7 +68,7 @@ onBeforeUnmount(() => {
 // 写真一覧を取得する関数（共有ユーザーも含む）
 const fetchPhotos = async () => {
   // 1. 共有ユーザー一覧を取得
-  const sharedRes = await fetch(`http://localhost:3001/shared-users?uid=${user.value.uid}`);
+  const sharedRes = await fetch(`${API_BASE_URL}/shared-users?uid=${user.value.uid}`);
   const sharedData = await sharedRes.json();
   const sharedUids = sharedData.sharedUids || [];
 
@@ -71,7 +77,7 @@ const fetchPhotos = async () => {
 
   // 2. 自分と共有ユーザーの写真を取得
   const listRes = await fetch(
-    `http://localhost:3001/list?uid=${user.value.uid}&sharedUids=${sharedUids.join(',')}`
+    `${API_BASE_URL}/list?uid=${user.value.uid}&sharedUids=${sharedUids.join(',')}`
   );
   const listData = await listRes.json();
   // 3. 写真データを整形
@@ -160,7 +166,7 @@ const confirmDeletePhoto = async (event) => {
     // fileName（Storageのファイルパス）を取得
     const fileName = selectedPhoto.value.fileName || extractFileNameFromUrl(selectedPhoto.value.url);
 
-    const res = await fetch('http://localhost:3001/delete-photo', {
+    const res = await fetch(`${API_BASE_URL}/delete-photo`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -175,6 +181,7 @@ const confirmDeletePhoto = async (event) => {
     alert('削除しました。');
     showModal.value = false;
     await fetchPhotos(); // 削除後にリストを更新
+    location.reload();
   } catch (e) {
     alert('削除に失敗しました。');
   }
@@ -189,20 +196,44 @@ function extractFileNameFromUrl(url) {
 
 <template>
   <div id="map" style="width: 100%; height: 95vh"></div>
-  <div v-if="showModal" class="photo-modal" @click="showModal = false">
-    <div class="photo-modal-content" @click.stop>
-      <img :src="selectedPhoto.url" class="photo-modal-img" @click.stop />
-      <div class="photo-modal-info">
-        <div class="photo-modal-address">
-          {{ photoAddress }}
+  <div
+    v-if="showModal"
+    class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40 backdrop-blur-md"
+    @click="showModal = false"
+  >
+    <div
+      class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-2xl border-2 border-blue-100 p-6 md:p-10 max-w-3xl w-full mx-4"
+      @click.stop
+    >
+      <img
+        :src="selectedPhoto.url"
+        class="w-full md:w-[480px] max-w-[80vw] max-h-[60vh] rounded-xl shadow-lg bg-white object-contain"
+        alt="사진"
+        @click.stop
+      />
+      <div class="flex flex-col items-start md:ml-8 mt-6 md:mt-0 w-full max-w-xs">
+        <div class="mb-4 w-full">
+          <div class="text-sm text-gray-500 mb-1">住所</div>
+          <div class="bg-blue-50 border border-blue-100 rounded-lg px-4 py-3 text-gray-700 shadow-sm whitespace-pre-line break-words">
+            {{ photoAddress }}
+          </div>
         </div>
-        <button
-          v-if="selectedPhoto && user && selectedPhoto.uid === user.uid"
-          @click.stop="confirmDeletePhoto"
-          class="photo-delete-btn"
-        >
-          削除
-        </button>
+        
+        <div class="flex flex-row gap-3 mt-4 w-full justify-end">
+          <button
+            v-if="selectedPhoto && user && selectedPhoto.uid === user.uid"
+            @click.stop="confirmDeletePhoto"
+            class="btn"
+          >
+            Delete
+          </button>
+          <button
+            @click="showModal = false"
+            class="btn-outline"
+          >
+            Close
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -263,6 +294,12 @@ function extractFileNameFromUrl(url) {
   border-radius: 6px;
   padding: 8px 24px;
   font-weight: bold;
-  cursor: pointer;
+}
+
+.btn {
+  @apply px-6 py-2 rounded-lg bg-blue-500 text-white font-semibold shadow hover:bg-blue-600 transition disabled:bg-gray-300 disabled:cursor-not-allowed border-2 border-blue-300;
+}
+.btn-outline {
+  @apply px-6 py-2 rounded-lg border-2 border-blue-400 text-blue-600 font-semibold bg-white hover:bg-blue-50 transition disabled:bg-gray-100 disabled:text-gray-400 disabled:border-gray-200 disabled:cursor-not-allowed;
 }
 </style>

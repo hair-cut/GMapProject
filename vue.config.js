@@ -1,4 +1,7 @@
+const path = require('path');
+
 module.exports = {
+  outputDir : path.resolve("../vuemap-back/public"),
   devServer: {
     proxy: {
       '^/api': {

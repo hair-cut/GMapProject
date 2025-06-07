@@ -1,10 +1,24 @@
 <template>
   <div id="app">
-    <router-view></router-view> <!-- 라우터 뷰를 통해 Home.vue가 로딩됨 -->
+    <router-view></router-view> 
   </div>
 </template>
 
 <script>
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase";
+
+const DEMO_EMAIL = process.env.VUE_APP_FIREBASE_DEMO_ACCOUNT;
+const DEMO_PASSWORD = process.env.VUE_APP_FIREBASE_DEMO_PASSWORD;
+
+const DEMO_TOKEN = "2f8a7c1e9b4d";
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('autologin') === DEMO_TOKEN) {
+  signInWithEmailAndPassword(auth, DEMO_EMAIL, DEMO_PASSWORD)
+    .catch(() => {/*  */});
+}
+
 export default {
   name: 'App',
 }

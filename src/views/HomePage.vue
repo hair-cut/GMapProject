@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div>
       <AppMenu />
       <GoogleMap />
     </div>

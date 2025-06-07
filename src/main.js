@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import VueNavigationBar from "vue-navigation-bar";
 import router from './router';
+import './assets/tailwind.css'
 
 const app = createApp(App)
 const script = document.createElement('script')

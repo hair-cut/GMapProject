@@ -90,10 +90,7 @@ export default {
   name: "AppMenu",
   setup() {
     // 環境によりAPIのベースURLを設定
-    const API_BASE_URL =
-      window.location.hostname === 'localhost'
-        ? 'http://localhost:3001'
-        : 'https://my-web-app--gmapproject-2ea97.asia-east1.hosted.app';
+    const API_BASE_URL = process.env.VUE_APP_API_BASE_URL;
 
     const user = ref(null);
     const fileInput = ref(null);

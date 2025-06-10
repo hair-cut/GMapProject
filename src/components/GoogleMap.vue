@@ -128,9 +128,8 @@ onMounted(() => {
           // Reverse Geocodingを使用して住所を取得
           if (photo.lat && photo.lng) {
             try {
-              const apiKey = process.env.VUE_APP_GOOGLE_MAP_API_KEY;
               const res = await fetch(
-                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${photo.lat},${photo.lng}&language=ja&key=${apiKey}`
+                `${API_BASE_URL}/geocode?lat=${photo.lat}&lng=${photo.lng}`
               );
               const data = await res.json();
               if (data.status === 'OK' && data.results.length > 0) {

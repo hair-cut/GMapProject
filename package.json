@@ -5,9 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "backend": "node ../upload-proxy/server.js",
-    "dev": "concurrently \"npm run serve\" \"npm run backend\""
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",

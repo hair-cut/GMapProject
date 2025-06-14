@@ -4,15 +4,15 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'https://firebasestorage.googleapis.com',
+        target: process.env.VUE_APP_API_BASE_URL,
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
       },
-      '^/functions': {
-        target: 'https://asia-northeast1-gmapproject-2ea97.cloudfunctions.net',
-        changeOrigin: true,
-        pathRewrite: { '^/functions': '' },
-      }
+      // '^/functions': {
+      //   target: 'https://asia-northeast1-gmapproject-2ea97.cloudfunctions.net',
+      //   changeOrigin: true,
+      //   pathRewrite: { '^/functions': '' },
+      // }
     }
   }
 };

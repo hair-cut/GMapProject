@@ -9,6 +9,76 @@
     ],
     "rewrites": [
       {
+        "source": "/upload",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/list",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/share-request",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/share-request/respond",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/shared-users",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/user-email",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/delete-photo",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/stop-share",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/share-requests",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
+        "source": "/geocode",
+        "run": {
+          "serviceId": "gmap-backend",
+          "region": "asia-east1"
+        }
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

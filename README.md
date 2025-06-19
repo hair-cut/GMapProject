@@ -1,6 +1,8 @@
 # GMapPhoto
 https://gmapproject-2ea97.web.app/?autologin=2f8a7c1e9b4d
 
+![image](https://github.com/user-attachments/assets/701a4e0a-1f4f-469e-a742-56f2f585b1fa)
+
 サービス概要
 =============
 GmapPhotoは、Googleマップ上で写真をアップロードし、写真の位置情報をもとに地図に表示してくれるサービスです。

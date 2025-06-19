@@ -55,8 +55,8 @@ GmapPhotoは、Googleマップ上で写真をアップロードし、写真の�
 =============
 |フロントエンド|バックエンド|そのほか|
 |------|---|---|
-|Vue.js|Node.js|firebase storage|
-|TailwindCSS||firebase database|
+|Vue.js|Node.js|Firebase storage|
+|TailwindCSS||Firebase database|
 
 
 

@@ -31,8 +31,7 @@ GmapPhotoは、Googleマップ上で写真をアップロードし、写真の�
 2. 青色の空欄に共有リクエストを送るメールアドレスを作成し、共有リクエストを送るボダンをクリックします。
 3. 共有リクエスト送信が完了しましたというアラムが出ると要請を送ります。
 
-
-![1313](https://github.com/user-attachments/assets/506c8fdc-4a70-410c-9777-f5bf5bfbafa3)
+![2](https://github.com/user-attachments/assets/8b639602-fec8-41e0-b496-501cf646b20f)
 
 ##### 「要請を受ける側」
 1. 右側にある写真共有ボダンを押します。
@@ -43,8 +42,8 @@ GmapPhotoは、Googleマップ上で写真をアップロードし、写真の�
 ※ 自分と他ユーザーの写真情報の区別は写真の枠線の色で判断できます。   
 ※ 写真枠線の色がどのユーザーの写真情報なのかを確認するには承認済みアカウントで承認されたメールアドレスの色から確認いただけます。   
 
+![1](https://github.com/user-attachments/assets/50b103e4-95cc-4b14-bf08-4b1623c297cc)
 
-![1515](https://github.com/user-attachments/assets/966b66f9-f2ba-42e3-b4a4-4c6c734233f4)
 
 ##### 「共有を中止」
 1. 右側にある写真共有ボダンを押します。

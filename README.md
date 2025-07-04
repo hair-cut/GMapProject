@@ -1,5 +1,4 @@
 # GMapPhoto
-プロジェクトリンク先: https://gmapproject-2ea97.web.app/?autologin=2f8a7c1e9b4d
 
 サービス概要
 =============

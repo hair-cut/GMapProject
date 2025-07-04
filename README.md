@@ -1,8 +1,6 @@
 # GMapPhoto
 プロジェクトリンク先: https://gmapproject-2ea97.web.app/?autologin=2f8a7c1e9b4d
 
-![image](https://github.com/user-attachments/assets/701a4e0a-1f4f-469e-a742-56f2f585b1fa)
-
 サービス概要
 =============
 GmapPhotoは、位置情報付きの写真をGoogleマップ上に表示できるサービスです。

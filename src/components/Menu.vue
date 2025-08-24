@@ -192,7 +192,7 @@ export default {
       if (fileInput.value) fileInput.value.click();
     };
 
-    // EXIFから位置情報を取得する関数
+    //  EXIFから位置情報を取得する関数
     function getLatLngFromExif(file) {
       return new Promise((resolve) => {
         EXIF.getData(file, function () {

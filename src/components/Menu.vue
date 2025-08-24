@@ -327,7 +327,9 @@ export default {
     });
 
     const goToLogin = () => {
-      window.location.href = '/login';
+      this.$router.push('/login');
+      // createWebHashHistoryへの変更による変更
+      // window.location.href = '/login';
     };
 
     const logout = async () => {

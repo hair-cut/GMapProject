@@ -7,12 +7,8 @@ module.exports = {
         target: process.env.VUE_APP_API_BASE_URL,
         changeOrigin: true,
         pathRewrite: { '^/api': '' },
-      },
-      // '^/functions': {
-      //   target: 'https://asia-northeast1-gmapproject-2ea97.cloudfunctions.net',
-      //   changeOrigin: true,
-      //   pathRewrite: { '^/functions': '' },
-      // }
+      }
     }
-  }
+  },// GithubPages経路設定
+  publicPath: process.env.NODE_ENV === 'production' ? '/GMapProject/' : '/'
 };

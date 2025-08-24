@@ -28,7 +28,6 @@ jobs:
       - name: Build Vue App
         run: npm run build
         env:
-          # GitHub Secrets에 등록된 값 사용
           VUE_APP_GOOGLE_MAP_API_KEY: ${{ secrets.VUE_APP_GOOGLE_MAP_API_KEY }}
           VUE_APP_GOOGLE_MAP_ID: ${{ secrets.VUE_APP_GOOGLE_MAP_ID }}
           VUE_APP_FIREBASE_API_KEY: ${{ secrets.VUE_APP_FIREBASE_API_KEY }}

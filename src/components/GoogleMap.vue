@@ -94,6 +94,7 @@ onMounted(() => {
     await waitForGoogleMaps();
 
     // 地図の初期化とマーカーの表示
+    // gecodeAPIはURLを持つLocal上では見えないためWEB上で確認すること
     map = new window.google.maps.Map(document.getElementById('map'), {
       center,
       zoom: 15,

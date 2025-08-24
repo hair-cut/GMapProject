@@ -85,6 +85,7 @@ import { ref, onMounted } from 'vue';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import EXIF from 'exif-js';
+import { useRouter } from 'vue-router'; //gitpages 404ERROR
 
 export default {
   name: "AppMenu",
@@ -116,6 +117,8 @@ export default {
       showShareModal.value = false;
       showHistoryModal.value = false;
     };
+
+    const router = useRouter();
 
     // 承認済み共有アカウントのメールアドレス一覧を取得
     const fetchSharedEmails = async () => {
@@ -327,7 +330,8 @@ export default {
     });
 
     const goToLogin = () => {
-      self.$router.push('/login');
+      router.push('/login'); 
+      // this.$router.push('/login');
       // createWebHashHistoryへの変更による変更
       // window.location.href = '/login';
     };

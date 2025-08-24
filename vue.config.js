@@ -10,6 +10,6 @@ module.exports = {
       }
     }
   },// GithubPages経路設定
-  publicPath: '/GMapProject/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/GMapProject/' : '/',
   outputDir: "./docs"
 };

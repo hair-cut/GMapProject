@@ -95,7 +95,6 @@ export default {
 
     const user = ref(null);
     const fileInput = ref(null);
-
     const showShareModal = ref(false);
     const shareTarget = ref('');
 

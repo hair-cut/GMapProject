@@ -7,7 +7,7 @@ Gmapは、位置情報付きの写真をGoogleマップ上に表示できるサ�
 また、他のユーザーとアップロードした写真を共有することも可能であり、他ユーザーの写真情報を読み取り自分のマップ上に表記することもできます。
 
 接続リンク先：https://hair-cut.github.io/GMapProject/#/autologin?token=2f8a7c1e9b4d
-注意事項：上記のリンク先は接続がないとスリープモードになるため、地図の表記まで10秒から15秒ほどかかる場合があります。
+ 注意事項：上記のリンク先は接続がないとスリープモードになるため、地図の表記まで10秒から15秒ほどかかる場合があります。
 <img width="1918" height="908" alt="image" src="https://github.com/user-attachments/assets/45f11b8e-9f32-464e-a013-dc1f811a14df" />
 
 
